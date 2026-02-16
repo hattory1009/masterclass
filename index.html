@@ -22,7 +22,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 15px;
+            padding: 10px;
         }
 
         .poster {
@@ -30,10 +30,13 @@
             width: 100%;
             background: #f7efe3;
             border-radius: 60px 20px 60px 20px;
-            padding: 45px 40px;
+            padding: 40px 35px;
             box-shadow: 0 30px 50px -20px #2d3e2d80, 0 0 0 3px #6b4f32 inset;
             position: relative;
             overflow: hidden;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            hyphens: auto;
         }
 
         /* ДЕКОР - ТЕКСТУРА ДЕРЕВА */
@@ -90,7 +93,7 @@
         .content {
             display: grid;
             grid-template-columns: 1.2fr 0.8fr;
-            gap: 40px;
+            gap: 30px;
             position: relative;
             z-index: 10;
         }
@@ -104,101 +107,110 @@
 
         /* ТИП СОБЫТИЯ */
         .event-type {
-            font-size: 0.9rem;
+            font-size: clamp(0.8rem, 2.5vw, 0.9rem);
             font-weight: 500;
             color: #6b4f32;
-            letter-spacing: 5px;
+            letter-spacing: 4px;
             text-transform: uppercase;
             background: #e5d6c4;
             display: inline-block;
-            padding: 8px 25px;
+            padding: 8px 20px;
             border-radius: 60px;
             border: 2px solid #8b6f4f;
             width: fit-content;
+            word-break: break-word;
         }
 
         /* НАЗВАНИЕ */
         .title-main {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 4.5rem;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
             font-weight: 700;
             line-height: 1;
             color: #2d3e2d;
-            margin: 15px 0 5px;
+            margin: 10px 0 5px;
+            word-break: break-word;
         }
 
         .title-sub {
-            font-size: 1.8rem;
+            font-size: clamp(1.3rem, 4vw, 1.8rem);
             font-weight: 300;
             color: #8b6f4f;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             font-style: italic;
+            word-break: break-word;
         }
 
         /* МАСТЕР */
         .master {
             display: flex;
             align-items: center;
-            gap: 20px;
-            margin: 15px 0;
-            padding: 20px;
+            gap: 15px;
+            margin: 10px 0;
+            padding: 15px;
             background: #e5d6c4;
             border-radius: 60px 10px 60px 10px;
             border: 2px solid #8b6f4f;
+            flex-wrap: wrap;
         }
 
         .master-photo {
-            width: 70px;
-            height: 70px;
+            width: 60px;
+            height: 60px;
             background: #8b6f4f;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2rem;
+            font-size: 1.8rem;
             color: #f7efe3;
             border: 3px solid #2d3e2d;
+            flex-shrink: 0;
         }
 
         .master-info {
             flex: 1;
+            min-width: 150px;
         }
 
         .master-name {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             font-weight: 600;
             color: #2d3e2d;
-            margin-bottom: 5px;
+            margin-bottom: 3px;
+            word-break: break-word;
         }
 
         .master-desc {
-            font-size: 0.95rem;
+            font-size: 0.85rem;
             color: #5a4a38;
+            word-break: break-word;
         }
 
         /* ДЕТАЛИ */
         .details-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin: 20px 0;
+            gap: 12px;
+            margin: 15px 0;
         }
 
         .detail-item {
             background: #e5d6c4;
             border-radius: 40px 10px 40px 10px;
-            padding: 20px 15px;
+            padding: 15px 10px;
             text-align: center;
             border: 2px solid #8b6f4f;
+            word-break: break-word;
         }
 
         .detail-icon {
-            font-size: 2rem;
-            margin-bottom: 10px;
+            font-size: 1.8rem;
+            margin-bottom: 8px;
         }
 
         .detail-label {
-            font-size: 0.8rem;
+            font-size: 0.7rem;
             text-transform: uppercase;
             color: #6b4f32;
             letter-spacing: 2px;
@@ -206,9 +218,10 @@
         }
 
         .detail-value {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             font-weight: 600;
             color: #2d3e2d;
+            white-space: nowrap;
         }
 
         /* МЕСТО */
@@ -216,33 +229,38 @@
             background: #e5d6c4;
             border: 3px dashed #8b6f4f;
             border-radius: 60px 10px 60px 10px;
-            padding: 25px;
+            padding: 20px;
             margin: 15px 0;
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 15px;
+            flex-wrap: wrap;
         }
 
         .location-icon {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             color: #2d3e2d;
+            flex-shrink: 0;
         }
 
         .location-info {
             flex: 1;
+            min-width: 150px;
         }
 
         .location-name {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             font-weight: 600;
             color: #2d3e2d;
             margin-bottom: 5px;
+            word-break: break-word;
         }
 
         .location-address {
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             color: #5a4a38;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
+            word-break: break-word;
         }
 
         .map-link {
@@ -250,7 +268,8 @@
             color: #8b6f4f;
             text-decoration: none;
             border-bottom: 2px solid #8b6f4f;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
+            white-space: nowrap;
         }
 
         /* ПРАВАЯ ЧАСТЬ */
@@ -258,45 +277,51 @@
             background: #e5d6c4;
             border: 3px solid #8b6f4f;
             border-radius: 60px 10px 60px 10px;
-            padding: 30px;
+            padding: 25px;
             display: flex;
             flex-direction: column;
-            gap: 25px;
+            gap: 20px;
+            word-break: break-word;
         }
 
         /* РАЗДЕЛЫ */
         .section-title {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             font-weight: 600;
             color: #2d3e2d;
-            margin-bottom: 15px;
-            padding-bottom: 10px;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
             border-bottom: 3px solid #8b6f4f;
+            word-break: break-word;
         }
 
         /* ПРОГРАММА */
         .program-item {
-            margin-bottom: 15px;
-            padding-bottom: 15px;
+            margin-bottom: 12px;
+            padding-bottom: 12px;
             border-bottom: 1px solid #b5926a;
+            word-break: break-word;
         }
 
         .program-time {
             font-weight: 600;
             color: #6b4f32;
-            font-size: 1.1rem;
+            font-size: 1rem;
             margin-bottom: 5px;
+            white-space: nowrap;
         }
 
         .program-desc {
             color: #2d3e2d;
+            font-size: 0.95rem;
+            word-break: break-word;
         }
 
         /* ЧТО НУЖНО */
         .materials {
             background: #f7efe3;
             border-radius: 30px 10px 30px 10px;
-            padding: 20px;
+            padding: 15px;
             border: 2px solid #8b6f4f;
         }
 
@@ -304,24 +329,28 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+            word-break: break-word;
         }
 
         .materials-item::before {
             content: '🪵';
-            font-size: 1.2rem;
+            font-size: 1.1rem;
+            flex-shrink: 0;
         }
 
         /* УРОВЕНЬ */
         .level {
             background: #2d3e2d;
             color: #f7efe3;
-            padding: 15px;
+            padding: 12px;
             border-radius: 60px;
             text-align: center;
             font-weight: 600;
-            font-size: 1.1rem;
+            font-size: 1rem;
             border: 3px solid #8b6f4f;
+            word-break: break-word;
         }
 
         /* ЦЕНА */
@@ -330,19 +359,21 @@
         }
 
         .price {
-            font-size: 3rem;
+            font-size: clamp(2.2rem, 5vw, 3rem);
             font-weight: 700;
             color: #2d3e2d;
+            white-space: nowrap;
         }
 
         .price small {
-            font-size: 1rem;
+            font-size: 0.9rem;
             color: #6b4f32;
         }
 
         .price-note {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: #5a4a38;
+            word-break: break-word;
         }
 
         /* КНОПКА */
@@ -351,14 +382,15 @@
             background: #2d3e2d;
             color: #f7efe3;
             text-decoration: none;
-            padding: 18px;
+            padding: 15px 12px;
             border-radius: 60px;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             font-weight: 600;
             text-align: center;
             margin: 20px 0;
             transition: 0.3s;
             border: 3px solid #8b6f4f;
+            white-space: nowrap;
         }
 
         .btn:hover {
@@ -370,7 +402,7 @@
         .contacts {
             display: flex;
             justify-content: center;
-            gap: 15px;
+            gap: 12px;
             flex-wrap: wrap;
         }
 
@@ -378,14 +410,15 @@
             background: #f7efe3;
             border: 2px solid #8b6f4f;
             color: #2d3e2d;
-            padding: 10px 20px;
+            padding: 8px 15px;
             border-radius: 60px;
             text-decoration: none;
-            font-size: 0.95rem;
+            font-size: 0.85rem;
             transition: 0.3s;
             display: flex;
             align-items: center;
             gap: 5px;
+            white-space: nowrap;
         }
 
         .contact-link:hover {
@@ -397,33 +430,37 @@
         .qr-section {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 12px;
             background: #f7efe3;
             border: 2px solid #8b6f4f;
             border-radius: 60px 10px 60px 10px;
-            padding: 15px;
+            padding: 12px;
             margin-top: 15px;
+            flex-wrap: wrap;
         }
 
         .qr-code {
-            width: 60px;
-            height: 60px;
+            width: 50px;
+            height: 50px;
             background: #2d3e2d;
             border-radius: 15px;
             display: flex;
             align-items: center;
             justify-content: center;
+            flex-shrink: 0;
         }
 
         .qr-code svg {
-            width: 50px;
-            height: 50px;
+            width: 40px;
+            height: 40px;
         }
 
         .qr-text {
             flex: 1;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: #2d3e2d;
+            min-width: 130px;
+            word-break: break-word;
         }
 
         .qr-text strong {
@@ -438,17 +475,19 @@
             border-top: 2px solid #8b6f4f;
             text-align: center;
             color: #5a4a38;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
+            word-break: break-word;
         }
 
         /* АДАПТАЦИЯ */
         @media (max-width: 850px) {
             .content {
                 grid-template-columns: 1fr;
+                gap: 25px;
             }
 
             .title-main {
-                font-size: 3.5rem;
+                font-size: 3rem;
             }
 
             .footer-note {
@@ -458,15 +497,15 @@
 
         @media (max-width: 600px) {
             .poster {
-                padding: 30px 20px;
+                padding: 25px 20px;
             }
 
             .title-main {
-                font-size: 2.8rem;
+                font-size: 2.5rem;
             }
 
             .title-sub {
-                font-size: 1.4rem;
+                font-size: 1.3rem;
             }
 
             .master {
@@ -474,8 +513,16 @@
                 text-align: center;
             }
 
+            .master-photo {
+                margin: 0 auto;
+            }
+
             .details-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .detail-value {
+                white-space: normal;
             }
 
             .location {
@@ -483,31 +530,114 @@
                 text-align: center;
             }
 
+            .location-icon {
+                margin: 0 auto;
+            }
+
             .price {
-                font-size: 2.5rem;
+                font-size: 2rem;
+                white-space: normal;
             }
 
             .btn {
-                font-size: 1.1rem;
+                font-size: 1rem;
+                white-space: normal;
+                padding: 12px;
             }
 
             .contacts {
                 flex-direction: column;
             }
 
+            .contact-link {
+                white-space: normal;
+                justify-content: center;
+            }
+
             .qr-section {
                 flex-direction: column;
                 text-align: center;
             }
+            
+            .map-link {
+                white-space: normal;
+            }
+            
+            .program-time {
+                white-space: normal;
+            }
         }
 
         @media (max-width: 400px) {
-            .title-main {
-                font-size: 2.2rem;
+            .poster {
+                padding: 20px 15px;
             }
-
+            
+            .title-main {
+                font-size: 2rem;
+            }
+            
+            .title-sub {
+                font-size: 1.1rem;
+            }
+            
+            .master-name {
+                font-size: 1.1rem;
+            }
+            
+            .master-desc {
+                font-size: 0.8rem;
+            }
+            
+            .detail-value {
+                font-size: 1rem;
+            }
+            
+            .location-name {
+                font-size: 1.2rem;
+            }
+            
+            .location-address {
+                font-size: 0.8rem;
+            }
+            
+            .price {
+                font-size: 1.6rem;
+            }
+            
+            .price small {
+                font-size: 0.7rem;
+            }
+            
+            .qr-text {
+                font-size: 0.7rem;
+            }
+            
             .program-item {
-                text-align: center;
+                text-align: left;
+            }
+        }
+
+        @media (max-width: 350px) {
+            .title-main {
+                font-size: 1.6rem;
+            }
+            
+            .title-sub {
+                font-size: 1rem;
+            }
+            
+            .price {
+                font-size: 1.4rem;
+            }
+            
+            .btn {
+                font-size: 0.9rem;
+            }
+            
+            .contact-link {
+                font-size: 0.75rem;
+                padding: 6px 10px;
             }
         }
     </style>
@@ -524,7 +654,7 @@
 
         <div class="content">
             
-            <!-- ЛЕВАЯ ЧАСТЬ -->
+            <!-- ЛЕВАЯ ЧАСТЬ (ИСПРАВЛЕНО) -->
             <div class="main-info">
                 
                 <!-- ТИП -->
@@ -538,7 +668,7 @@
                     резьба и обработка
                 </div>
 
-                <!-- МАСТЕР -->
+                <!-- МАСТЕР (ИСПРАВЛЕНО) -->
                 <div class="master">
                     <div class="master-photo">🪚</div>
                     <div class="master-info">
@@ -547,7 +677,7 @@
                     </div>
                 </div>
 
-                <!-- ДЕТАЛИ -->
+                <!-- ДЕТАЛИ (ИСПРАВЛЕНО) -->
                 <div class="details-grid">
                     <div class="detail-item">
                         <div class="detail-icon">📅</div>
@@ -571,7 +701,7 @@
                     </div>
                 </div>
 
-                <!-- МЕСТО -->
+                <!-- МЕСТО (ИСПРАВЛЕНО) -->
                 <div class="location">
                     <div class="location-icon">🏡</div>
                     <div class="location-info">
@@ -583,10 +713,10 @@
 
             </div>
 
-            <!-- ПРАВАЯ ЧАСТЬ -->
+            <!-- ПРАВАЯ ЧАСТЬ (ИСПРАВЛЕНО) -->
             <div class="side-info">
                 
-                <!-- ПРОГРАММА -->
+                <!-- ПРОГРАММА (ИСПРАВЛЕНО) -->
                 <div>
                     <div class="section-title">программа</div>
                     <div class="program-item">
@@ -607,7 +737,7 @@
                     </div>
                 </div>
 
-                <!-- ЧТО НУЖНО -->
+                <!-- ЧТО НУЖНО (ИСПРАВЛЕНО) -->
                 <div class="materials">
                     <div class="section-title">что взять с собой</div>
                     <div class="materials-item">все материалы предоставляются</div>
@@ -615,28 +745,28 @@
                     <div class="materials-item">хорошее настроение 🌿</div>
                 </div>
 
-                <!-- РЕЗУЛЬТАТ -->
+                <!-- РЕЗУЛЬТАТ (ИСПРАВЛЕНО) -->
                 <div class="level">
                     ✨ каждый унесёт готовое изделие ✨
                 </div>
 
-                <!-- ЦЕНА -->
+                <!-- ЦЕНА (ИСПРАВЛЕНО) -->
                 <div class="price-block">
                     <div class="price">2 500 ₽ <small>/ чел</small></div>
                     <div class="price-note">все материалы включены</div>
                 </div>
 
-                <!-- КНОПКА -->
+                <!-- КНОПКА (ИСПРАВЛЕНО) -->
                 <a href="#" class="btn">записаться</a>
 
-                <!-- КОНТАКТЫ -->
+                <!-- КОНТАКТЫ (ИСПРАВЛЕНО) -->
                 <div class="contacts">
                     <a href="#" class="contact-link" target="_blank">✈️ Telegram</a>
                     <a href="#" class="contact-link" target="_blank">📱 MAX</a>
                     <a href="#" class="contact-link">📞 позвонить</a>
                 </div>
 
-                <!-- QR -->
+                <!-- QR (ИСПРАВЛЕНО) -->
                 <div class="qr-section">
                     <div class="qr-code">
                         <svg viewBox="0 0 100 100">
@@ -660,7 +790,7 @@
 
             </div>
 
-            <!-- ПОДВАЛ -->
+            <!-- ПОДВАЛ (ИСПРАВЛЕНО) -->
             <div class="footer-note">
                 мастерская "Древо" · все материалы включены · 16+
             </div>
